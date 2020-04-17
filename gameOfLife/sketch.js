@@ -89,14 +89,17 @@ function mousePressed() {
     randomInit(grid);
   }
   else {
-    if (mouseX >= 0 && mouseX < maxWinX && mouseY >= 0 && mouseY < maxWinY) {
-      let xGrid = Math.floor(mouseX / cellSize)
-      let yGrid = Math.floor(mouseY / cellSize)
-      console.log(xGrid, yGrid)
-      toggleCell(xGrid, yGrid, grid)
-
-    }
+    running = true;
   }
+  // else {
+  //   if (mouseX >= 0 && mouseX < maxWinX && mouseY >= 0 && mouseY < maxWinY) {
+  //     let xGrid = Math.floor(mouseX / cellSize)
+  //     let yGrid = Math.floor(mouseY / cellSize)
+  //     console.log(xGrid, yGrid)
+  //     toggleCell(xGrid, yGrid, grid)
+
+  //   }
+  // }
 }
 
 function loadData(data, _grid){
