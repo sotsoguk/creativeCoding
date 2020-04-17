@@ -89,19 +89,18 @@ function mousePressed() {
     randomInit(grid);
   }
   else {
-    running = true;
+    if (mouseX >= 0 && mouseX < maxWinX && mouseY >= 0 && mouseY < maxWinY) {
+      let xGrid = Math.floor(mouseX / cellSize)
+      let yGrid = Math.floor(mouseY / cellSize)
+      console.log(xGrid, yGrid)
+      toggleCell(xGrid, yGrid, grid)
+
+    }
   }
-  // else {
-  //   if (mouseX >= 0 && mouseX < maxWinX && mouseY >= 0 && mouseY < maxWinY) {
-  //     let xGrid = Math.floor(mouseX / cellSize)
-  //     let yGrid = Math.floor(mouseY / cellSize)
-  //     console.log(xGrid, yGrid)
-  //     toggleCell(xGrid, yGrid, grid)
-
-  //   }
-  // }
 }
-
+function touchStarted() {
+  running = ! running;
+}
 function loadData(data, _grid){
   let result = hexToBinary(data);
   let binaryString = result['result'];
